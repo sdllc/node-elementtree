@@ -18,7 +18,7 @@ Supported XPath expressions in `find`, `findall` and `findtext` methods are list
 Build status
 ====================
 
-[![Build Status](https://secure.travis-ci.org/racker/elementtree.png)](http://travis-ci.org/racker/node-elementtree)
+[![Build Status](https://secure.travis-ci.org/racker/node-elementtree.png)](http://travis-ci.org/racker/node-elementtree)
 
 
 License
