@@ -132,19 +132,14 @@ exports['test_write_with_options'] = function(test, assert) {
     '<bar>\n' +
     '    <blah a="11" />\n' +
     '    <blah a="12" />\n' +
-    '    <gag a="13" b="abc">\n' +
-    '        ponies\n' +
-    '    </gag>\n' +
+    '    <gag a="13" b="abc">ponies</gag>\n' +
     '</bar>\n';
     var expected2 = "<?xml version='1.0' encoding='utf-8'?>\n" +
     '<bar>\n' +
     '  <blah a="11" />\n' +
     '  <blah a="12" />\n' +
-    '  <gag a="13" b="abc">\n' +
-    '    ponies\n' +
-    '  </gag>\n' +
+    '  <gag a="13" b="abc">ponies</gag>\n' +
     '</bar>\n';
-
 
   SubElement(e, "blah", {a: 11});
   SubElement(e, "blah", {a: 12});
@@ -160,7 +155,6 @@ exports['test_write_with_options'] = function(test, assert) {
   var etree = new ElementTree(e);
   var xml1 = etree.write({prettyprint: true});
   var xml2 = etree.write({prettyprint: true, 'indent_string': '  '});
-  console.log(xml2)
   assert.equal(xml1, expected1);
   assert.equal(xml2, expected2);
   test.finish();
