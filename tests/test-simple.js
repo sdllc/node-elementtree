@@ -130,18 +130,24 @@ exports['test_write_with_options'] = function(test, assert) {
   var e = new Element('bar', {});
   var expected1 = "<?xml version='1.0' encoding='utf-8'?>\n" +
     '<bar>\n' +
-    '    <blah a="11" />\n' +
+    '    <blah a="11">\n' +
+    '        <baz d="11">test</baz>\n' +
+    '    </blah>\n' +
     '    <blah a="12" />\n' +
     '    <gag a="13" b="abc">ponies</gag>\n' +
     '</bar>\n';
     var expected2 = "<?xml version='1.0' encoding='utf-8'?>\n" +
     '<bar>\n' +
-    '  <blah a="11" />\n' +
+    '  <blah a="11">\n' +
+    '    <baz d="11">test</baz>\n' +
+    '  </blah>\n' +
     '  <blah a="12" />\n' +
     '  <gag a="13" b="abc">ponies</gag>\n' +
     '</bar>\n';
 
-  SubElement(e, "blah", {a: 11});
+  var se1 = SubElement(e, "blah", {a: 11});
+  var se2 = SubElement(se1, "baz", {d: 11});
+  se2.text = 'test';
   SubElement(e, "blah", {a: 12});
   var se = et.SubElement(e, "gag", {a: '13', b: 'abc'});
   se.text = 'ponies';
