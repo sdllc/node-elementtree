@@ -6,7 +6,7 @@ elementtree v0.1.2
 
  * Bump sax dependency version.
 
-elementtree v0.1.0 - 2011-09-23
+elementtree v0.1.1 - 2011-09-23
 
  * Improve special character escaping.
    [Ryan Phillips]
