@@ -159,8 +159,8 @@ exports['test_write_with_options'] = function(test, assert) {
 
   assert.equal(i, 1);
   var etree = new ElementTree(e);
-  var xml1 = etree.write({prettyprint: true});
-  var xml2 = etree.write({prettyprint: true, 'indent_string': '  '});
+  var xml1 = etree.write({'indent': 4});
+  var xml2 = etree.write({'indent': 2});
   assert.equal(xml1, expected1);
   assert.equal(xml2, expected2);
   test.finish();
