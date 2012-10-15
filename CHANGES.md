@@ -1,3 +1,15 @@
+elementtree v0.1.4
+
+* Allow user to use namespaced attributes when using find* functions.
+  [Andrew Lunny]
+
+elementtree v0.1.3
+
+* Improve the output of text content in the tags (strip unnecessary line break
+  characters).
+
+[Darryl Pogue]
+
 elementtree v0.1.2
 
  * Allow user to pass 'indent' option to ElementTree.write method. If this
