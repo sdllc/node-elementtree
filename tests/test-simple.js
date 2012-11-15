@@ -275,3 +275,25 @@ exports['test_escape'] = function(test, assert) {
   assert.equal(et.tostring(a, { 'xml_declaration': false }), '<a><b>&amp;&amp;&amp;&amp;&lt;&gt;\"\n\r</b></a>');
   test.finish();
 };
+
+exports['test_find_null'] = function(test, assert) {
+  var root = Element('root');
+  var node = SubElement(root, 'node');
+  var leaf  = SubElement(node, 'leaf');
+  leaf.text = 'ipsum';
+
+  assert.equal(root.find('node/leaf'), leaf);
+  assert.equal(root.find('no-such-node/leaf'), null);
+  test.finish();
+};
+
+exports['test_findtext_null'] = function(test, assert) {
+  var root = Element('root');
+  var node = SubElement(root, 'node');
+  var leaf  = SubElement(node, 'leaf');
+  leaf.text = 'ipsum';
+
+  assert.equal(root.findtext('node/leaf'), 'ipsum');
+  assert.equal(root.findtext('no-such-node/leaf'), null);
+  test.finish();
+};

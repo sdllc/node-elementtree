@@ -1,3 +1,9 @@
+elementtree v0.1.5 (in development)
+
+* Fix a bug in the find() and findtext() method which could manifest itself
+  under some conditions.
+  [metagriffin]
+
 elementtree v0.1.4
 
 * Allow user to use namespaced attributes when using find* functions.
