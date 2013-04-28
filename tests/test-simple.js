@@ -297,3 +297,20 @@ exports['test_findtext_null'] = function(test, assert) {
   assert.equal(root.findtext('no-such-node/leaf'), null);
   test.finish();
 };
+
+exports['test_remove'] = function(test, assert) {
+  var root = Element('root');
+  var node1 = SubElement(root, 'node1');
+  var node2 = SubElement(root, 'node2');
+  var node3 = SubElement(root, 'node3');
+
+  assert.equal(root.len(), 3);
+
+  root.remove(node2);
+
+  assert.equal(root.len(), 2);
+  assert.equal(root.getItem(0).tag, 'node1')
+  assert.equal(root.getItem(1).tag, 'node3')
+
+  test.finish();
+};
