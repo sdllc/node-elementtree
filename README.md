@@ -18,7 +18,12 @@ Supported XPath expressions in `find`, `findall` and `findtext` methods are list
 Example 1 – Creating An XML Document
 ====================
 
-This example shows how to build a valid XML document that can be published to Atom Hopper. Atom Hopper is used internally as a bridge from products all the way to collecting revenue, called “Usage.”  MaaS and other products send similar events to it every time user performs an action on a resource (e.g. creates, updates or deletes). Below is an example of leveraging the API to create a new XML document.
+This example shows how to build a valid XML document that can be published to
+Atom Hopper. Atom Hopper is used internally as a bridge from products all the
+way to collecting revenue, called “Usage.”  MaaS and other products send similar
+events to it every time user performs an action on a resource
+(e.g. creates,updates or deletes). Below is an example of leveraging the API
+to create a new XML document.
 
 ```javascript
 var et = require('elementtree');
@@ -27,7 +32,8 @@ var ElementTree = et.ElementTree;
 var element = et.Element;
 var subElement = et.SubElement;
 
-var date, root, tenantId, serviceName, eventType, usageId, dataCenter, region, checks, resourceId, category, startTime, resourceName, etree, xml;
+var date, root, tenantId, serviceName, eventType, usageId, dataCenter, region,
+checks, resourceId, category, startTime, resourceName, etree, xml;
 
 date = new Date();
 
@@ -69,7 +75,10 @@ xml = etree.write({'xml_declaration': false});
 console.log(xml);
 ```
 
-As you can see, both et.Element and et.SubElement are factory methods which return a new instance of Element and SubElement class, respectively. When you create a new element (tag) you can use set method to set an attribute. To set the tag value, assign a value to the .text attribute.
+As you can see, both et.Element and et.SubElement are factory methods which
+return a new instance of Element and SubElement class, respectively.
+When you create a new element (tag) you can use set method to set an attribute.
+To set the tag value, assign a value to the .text attribute.
 
 This example would output a document that looks like this:
 
@@ -91,9 +100,13 @@ This example would output a document that looks like this:
 Example 2 – Parsing An XML Document
 ====================
 
-This example shows how to parse an XML document and use simple XPath selectors. For demonstration purposes, we will use the XML document located at https://gist.github.com/2554343.
+This example shows how to parse an XML document and use simple XPath selectors.
+For demonstration purposes, we will use the XML document located at
+https://gist.github.com/2554343.
 
-Behind the scenes, node-elementtree uses Isaac’s sax library for parsing XML, but the library has a concept of “parsers,” which means it’s pretty simple to add support for a different parser.
+Behind the scenes, node-elementtree uses Isaac’s sax library for parsing XML,
+but the library has a concept of “parsers,” which means it’s pretty simple to
+add support for a different parser.
 
 ```javascript
 var fs = require('fs');
