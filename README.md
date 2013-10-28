@@ -20,7 +20,7 @@ Example 1 – Creating An XML Document
 
 This example shows how to build a valid XML document that can be published to Atom Hopper. Atom Hopper is used internally as a bridge from products all the way to collecting revenue, called “Usage.”  MaaS and other products send similar events to it every time user performs an action on a resource (e.g. creates, updates or deletes). Below is an example of leveraging the API to create a new XML document.
 
-```node
+```javascript
 var et = require('elementtree');
 var XML = et.XML;
 var ElementTree = et.ElementTree;
@@ -73,7 +73,7 @@ As you can see, both et.Element and et.SubElement are factory methods which retu
 
 This example would output a document that looks like this:
 
-```
+```xml
 <entry xmlns="http://www.w3.org/2005/Atom">
   <TenantId>12345</TenantId>
   <ServiceName>MaaS</ServiceName>
@@ -95,7 +95,7 @@ This example shows how to parse an XML document and use simple XPath selectors. 
 
 Behind the scenes, node-elementtree uses Isaac’s sax library for parsing XML, but the library has a concept of “parsers,” which means it’s pretty simple to add support for a different parser.
 
-```node
+```javascript
 var fs = require('fs');
 
 var et = require('elementtree');
