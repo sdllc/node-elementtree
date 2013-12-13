@@ -316,11 +316,24 @@ exports['test_remove'] = function(test, assert) {
 };
 
 exports['test_cdata_write'] = function(test, assert) {
-    var root = Element('root');
-    root.append(et.CData('if(0>1) then true;'));
-    var etree = new ElementTree(root);
-    var xml = etree.write({'xml_declaration': false});
-    assert.equal(xml, '<root><![CDATA[if(0>1) then true;]]></root>');
+  var root, etree, xml, values, value, i;
 
-    test.finish();
+  values = [
+    'if(0>1) then true;',
+    '<test1>ponies hello</test1>',
+    ''
+  ];
+
+  for (i = 0; i < values.length; i++) {
+    value = values[i];
+
+    root = Element('root');
+    root.append(et.CData(value));
+    etree = new ElementTree(root);
+    xml = etree.write({'xml_declaration': false});
+
+    assert.equal(xml, sprintf('<root><![CDATA[%s]]></root>', value));
+  }
+
+  test.finish();
 };
