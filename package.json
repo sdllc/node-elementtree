@@ -29,10 +29,5 @@
   "devDependencies": {
     "whiskey": "0.8.x"
   },
-  "licenses": [
-    {
-      "type": "Apache",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    }
-  ]
+  "license": "Apache-2.0"
 }
