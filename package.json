@@ -24,7 +24,7 @@
     "node": ">= 0.4.0"
   },
   "dependencies" : {
-    "sax": "0.3.5"
+    "sax": "1.1.4"
   },
   "devDependencies": {
     "whiskey": "0.8.x"
